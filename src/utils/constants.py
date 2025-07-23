@@ -6,11 +6,6 @@ import unicodedata
 
 
 PROJECTS = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
     "veloren",
 ]
 
