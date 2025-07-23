@@ -89,7 +89,9 @@ Example of one-shot on the OS project (Veloren). The `seed` arguments can be cha
 python src/models/run.py --project veloren --shots 1 --seed 1
 ```
 
-During our experiments we use the following values for each argument:
+Results are appended to the `data/results/veloren.csv` file. Actual results obtained for the Veloren project during our experiments are recorded in `data/results/veloren_saved.csv`.
+
+During our experiments we used the following values for each argument:
 
 * `project`: A, B, C, D, E, veloren
 * `shots`: 1 to 15
