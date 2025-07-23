@@ -91,7 +91,7 @@ IMPORTANT: We ran our experiments on a 16GB GPU (VRAM) Linux-based OS.
 python src/models/run.py --project veloren --shots 1 --seed 1
 ```
 
-Results are appended to the `data/results/veloren.csv` file. Actual results obtained for the Veloren project during our experiments are recorded in `data/results/veloren_saved.csv`.
+FSL Results are appended to the `data/results/runs/veloren.csv` file. FSL results obtained on the Veloren project during our experiments are recorded in `data/results/runs/veloren_saved.csv`.
 
 During our experiments we used the following values for each argument:
 
@@ -104,3 +104,5 @@ Run the SOTA brown job detector on the project `veloren` for comparison.
 ```sh
 python src/models/baselines/sota_brown_detector.py --project veloren --seed 1
 ```
+
+Baseline Results are appended to the `data/results/baselines/veloren.csv` file. Baseline results obtained on the Veloren project during our experiments are recorded in `data/results/baselines/veloren_saved.csv`.
