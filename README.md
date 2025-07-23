@@ -93,6 +93,16 @@ python src/models/run.py --project veloren --shots 1 --seed 1
 
 FSL Results are appended to the `data/results/runs/veloren.csv` file. FSL results obtained on the Veloren project during our experiments are recorded in `data/results/runs/veloren_saved.csv`.
 
+Expected results content is described in the following table:
+
+|0_precision       |0_recall           |1_precision       |1_recall|1_f1_score        |random_seed       |num_shots         |training_time|
+|------------------|-------------------|------------------|--------|------------------|------------------|------------------|-------------|
+|0.782608695652174 |0.9642857142857143 |0.9111111111111111|0.5774647887323944|0.7068965517241379|1                 |1                 |0.4177382302004844|
+|0.9534883720930233|0.36283185840707965|0.4857142857142857|0.9714285714285714|0.6476190476190476|4                 |1                 |0.7450696988962591|
+|0.75              |0.8761061946902655 |0.7254901960784313|0.5285714285714286|0.6115702479338843|2                 |1                 |0.5001221669372171|
+|0.7985611510791367|0.9823008849557522 |0.9545454545454546|0.6     |0.7368421052631579|3                 |1                 |0.4844527270179242|
+|0.8045112781954887|0.9553571428571429 |0.9               |0.6338028169014085|0.743801652892562 |5                 |1                 |0.39875594596378505|
+
 During our experiments we used the following values for each argument:
 
 * `project`: A, B, C, D, E, veloren
