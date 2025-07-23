@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "efficient-detection-intermittent-job-failures"
+version = "0.1.0"
+description = ""
+authors = ["Henri Aïdasso <ahenrij@gmail.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+datasets = "^3.2.0"
+peft = "^0.14.0"
+evaluate = "^0.4.3"
+psutil = "^6.1.1"
+plotly = "^6.0.0"
+kaleido = "0.2.1"
+nbformat = "^5.10.4"
+setfit = "^1.1.1"
+transformers = "^4.48.2"
+scikit-learn = "^1.6.1"
+regex = "^2024.11.6"
+more-itertools = "^10.6.0"
+xgboost = "^3.0.1"
+shap = "^0.47.2"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
