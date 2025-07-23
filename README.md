@@ -83,7 +83,9 @@ unzip data/labeled.zip -d .
 
 ## Running experiments
 
-Example of one-shot on the OS project (Veloren). The `seed` arguments can be changed for another reproducible repeat.
+Example of one-shot experiment on the OS project (Veloren). The `seed` arguments can be changed for another reproducible repeat.
+
+IMPORTANT: We ran our experiments on a 16GB GPU (VRAM) Linux-based OS.
 
 ```sh
 python src/models/run.py --project veloren --shots 1 --seed 1
