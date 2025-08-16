@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "efficient-detection-intermittent-job-failures"
+name = "SLID"
 version = "0.1.0"
-description = ""
+description = "SLID - Small Language-based Intermittency Detector"
 authors = ["Henri Aïdasso <ahenrij@gmail.com>"]
 readme = "README.md"
 packages = [{include = "src"}]
@@ -23,6 +23,8 @@ more-itertools = "^10.6.0"
 xgboost = "^3.0.1"
 shap = "^0.47.2"
 optuna = "^4.4.0"
+torch = "2.2.2"
+numpy = ">=1.0,<2"
 
 
 [tool.poetry.group.dev.dependencies]

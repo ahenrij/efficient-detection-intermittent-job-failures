@@ -2,7 +2,7 @@
 
 Replication package of the paper [Efficient Detection of Intermittent Job Failures Using Few-Shot Learning](https://arxiv.org/abs/2507.04173) accepted at the 41st International Conference on Software Maintenance and Evolution ICSME 2025, Industry Track.
 
-This replication package includes:
+This replication package (SLID - Small Language-based Intermittency Detector) includes:
 
 * [Source Code](src/models/) for creating FSL models for detecting intermittent job failures and running the experiments.
 * [Experimental Results](data/results/) including raw results from running the experiment on the Veloren project.
