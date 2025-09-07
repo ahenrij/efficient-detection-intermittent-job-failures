@@ -71,7 +71,7 @@ unzip data/prepared.zip -d .
 
 Optionally, also unzip `data/sampled.zip`, `data/labeled.zip`, and `data/logs/raw.zip`
 
-## Train and evaluate models
+### Train and evaluate models
 
 Here is an example of one-shot fine-tuning using the OSS project's CI job data included in this package. The `seed` arguments can be changed for another reproducible repeat.
 
