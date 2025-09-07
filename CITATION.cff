@@ -1,10 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
+title: "SLID - Small Language model-based Intermittency Detection"
 authors:
   - family-names: Aïdasso
     given-names: Henri
     orcid: https://orcid.org/0009-0004-1625-0159
-title: "SLID - Small Language-based Intermittency Detector"
 version: 0.1.0
 identifiers:
   - type: doi
