@@ -1,18 +1,18 @@
 # Artifact for Efficient Detection of Intermittent Job Failures Using Few-Shot Learning
 
-Replication package of the paper [Efficient Detection of Intermittent Job Failures Using Few-Shot Learning](https://arxiv.org/abs/2507.04173) accepted at the 41st International Conference on Software Maintenance and Evolution ICSME 2025, Industry Track.
+Research Artifact of the paper [Efficient Detection of Intermittent Job Failures Using Few-Shot Learning](https://arxiv.org/abs/2507.04173) accepted at the 41st International Conference on Software Maintenance and Evolution ICSME 2025, Industry Track.
 
-This replication package (SLID - Small Language-based Intermittency Detector) includes:
+This artifact has been awarded the "__Open Research Object__" and "__Research Object Reviewed__" badges at ICSME 2025, Artifact Evaluation Track. It includes:
 
-* [Source Code](src/models/) for creating FSL models for detecting intermittent job failures and running the experiments.
+* [SLID - Source Code](src/models/) for creating and evaluating few-shot fine-tuned Small Language models for Intermittent job failures Detection.
 * [Experimental Results](data/results/) including raw results from running the experiment on the Veloren project.
 * [Jupyter Notebooks](notebooks/) used for conducting the study.
 
-To conduct the study, we collected build job data from GitLab projects using the python-gitlab library. For confidentiality reasons, the data collected from TELUS projects are not included. However, we included the build job [dataset](data/labeled.zip) collected and manually labeled from the open-source (OS) project Veloren to facilitate reproducibility and reuse.
+For the purpose of the original study, we collected CI job data from GitLab projects using the [glbuild](https://pypi.org/project/glbuild/) Python library. For confidentiality reasons, the data collected from TELUS projects are not included. However, we included the build job [dataset](data/labeled.zip) collected and manually labeled from the open-source software (OSS) project Veloren to facilitate reproducibility and reuse.
 
-## Content of the Replication Package
+## Description of Contents
 
-1.) `notebooks/` includes the **Jupyter Notebooks** used to prepare data and answer our RQs. These notebooks are not exercisable, but for read-only purpose.
+1.) `notebooks/` includes the __Jupyter Notebooks__ used to prepare data and answer our RQs. These notebooks are not exercisable, but for __read-only__ purpose.
 
 * [Data Preparation for baseline replication](notebooks/data_preparation.ipynb)
 
@@ -20,7 +20,7 @@ To conduct the study, we collected build job data from GitLab projects using the
 * [RQ2. FSL Performance Analysis](notebooks/RQ2_fsl_evaluation.ipynb)
 * [RQ3. Cross-Predictions Analysis](notebooks/RQ3_fsl_cross_project.ipynb)
 
-2.) `data/` includes the **datasets** of the studied open-source project Veloren.
+2.) `data/` includes the __datasets__ of the studied OSS project Veloren.
 
 * [Prepared Dataset](data/prepared.zip) `prepared.zip` with automated labels and features for baseline replication
 * [Sample Dataset](data/sampled.zip) `sampled.zip` for performing manual labeling
@@ -49,7 +49,7 @@ where the `failureCategoryId` maps on the categories in the [failure_reasons.csv
 poetry self add poetry-plugin-shell
 ```
 
-## Setup
+## Setup (development)
 
 ### Install dependencies
 
@@ -63,45 +63,35 @@ poetry install
 poetry shell
 ```
 
-### Unzip all datasets
+### Unzip datasets
 
 ```sh
 unzip data/prepared.zip -d .
 ```
 
-```sh
-unzip data/sampled.zip -d .
-```
+Optionally, also unzip `data/sampled.zip`, `data/labeled.zip`, and `data/logs/raw.zip`
 
-```sh
-unzip data/logs/raw.zip -d .
-```
+## Train and evaluate models
 
-```sh
-unzip data/labeled.zip -d .
-```
+Here is an example of one-shot fine-tuning using the OSS project's CI job data included in this package. The `seed` arguments can be changed for another reproducible repeat.
 
-## Running experiments
-
-Example of one-shot experiment on the OS project (Veloren). The `seed` arguments can be changed for another reproducible repeat.
-
-IMPORTANT: We ran our experiments on a 16GB GPU (VRAM) Linux-based OS.
+NOTE: We recommend 16GB or more of GPU and a Linux-based operating system for fast training (~5min for one-shot).
 
 ```sh
 python src/models/run.py --project veloren --shots 1 --seed 1
 ```
 
-FSL Results are appended to the `data/results/runs/veloren.csv` file. FSL results obtained on the Veloren project during our experiments are recorded in `data/results/runs/veloren_saved.csv`.
+FSL results are appended to the `data/results/runs/veloren.csv` file. FSL results obtained on the Veloren project during our experiments are recorded in `data/results/runs/veloren_saved.csv`.
 
 Expected results content is described in the following table:
 
 |0_precision       |0_recall           |1_precision       |1_recall|1_f1_score        |random_seed       |num_shots         |training_time|
 |------------------|-------------------|------------------|--------|------------------|------------------|------------------|-------------|
-|0.782608695652174 |0.9642857142857143 |0.9111111111111111|0.5774647887323944|0.7068965517241379|1                 |1                 |0.4177382302004844|
-|0.9534883720930233|0.36283185840707965|0.4857142857142857|0.9714285714285714|0.6476190476190476|4                 |1                 |0.7450696988962591|
-|0.75              |0.8761061946902655 |0.7254901960784313|0.5285714285714286|0.6115702479338843|2                 |1                 |0.5001221669372171|
-|0.7985611510791367|0.9823008849557522 |0.9545454545454546|0.6     |0.7368421052631579|3                 |1                 |0.4844527270179242|
-|0.8045112781954887|0.9553571428571429 |0.9               |0.6338028169014085|0.743801652892562 |5                 |1                 |0.39875594596378505|
+|0.78 |0.96 |0.91|0.57|0.70|1                 |1                 |0.41|
+|0.95|0.36|0.48|0.97|0.64|4                 |1                 |0.74|
+|0.75              |0.87 |0.72|0.52|0.61|2                 |1                 |0.50|
+|0.79|0.98 |0.95|0.6     |0.73|3                 |1                 |0.48|
+|0.80|0.95 |0.9               |0.63|0.74 |5                 |1                 |0.39|
 
 During our experiments we used the following values for each argument:
 
@@ -115,4 +105,4 @@ Run the SOTA brown job detector on the project `veloren` for comparison.
 python src/models/baselines/sota_brown_detector.py --project veloren --seed 1
 ```
 
-Baseline Results are appended to the `data/results/baselines/veloren.csv` file. Baseline results obtained on the Veloren project during our experiments are recorded in `data/results/baselines/veloren_saved.csv`.
+Baseline results are appended to the `data/results/baselines/veloren.csv` file. Baseline results obtained on the Veloren project during our experiments are recorded in `data/results/baselines/veloren_saved.csv`.
