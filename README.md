@@ -39,7 +39,9 @@ where the `failureCategoryId` maps on the categories in the [failure_reasons.csv
 * [FSL model evaluator module](src/models/evaluator.py) `models/evaluator.py`
 * [Log pre-processing utilities](src/preprocessing/) `preprocessing/log.py`
 
-## Requirements
+## Setup (development)
+
+### Requirements
 
 * [Poetry](https://python-poetry.org/docs/)
 * [Python >= 3.10](https://www.python.org/downloads/)
@@ -48,8 +50,6 @@ where the `failureCategoryId` maps on the categories in the [failure_reasons.csv
 ```sh
 poetry self add poetry-plugin-shell
 ```
-
-## Setup (development)
 
 ### Install dependencies
 
