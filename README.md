@@ -2,7 +2,7 @@
 
 Research Artifact of the paper [Efficient Detection of Intermittent Job Failures Using Few-Shot Learning](https://arxiv.org/abs/2507.04173) accepted at the IEEE 41st International Conference on Software Maintenance and Evolution ICSME 2025, Industry Track.
 
-This artifact has been awarded the "__Open Research Object__" and "__Research Object Reviewed__" badges at ICSME 2025, Artifact Evaluation Track. It includes:
+This artifact has been awarded the "__Open Research Object__" and "__Research Object Reviewed__" badges at ICSME 2025 Artifact Evaluation Track. It includes:
 
 * [SLID - Source Code](src/models/) for creating and evaluating few-shot fine-tuned Small Language models for Intermittent job failures Detection.
 * [Experimental Results](data/results/) including raw results from running the experiment on the Veloren project.
