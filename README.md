@@ -39,7 +39,7 @@ where the `failureCategoryId` maps on the categories in the [failure_reasons.csv
 * [FSL model evaluator module](src/models/evaluator.py) `models/evaluator.py`
 * [Log pre-processing utilities](src/preprocessing/) `preprocessing/log.py`
 
-## Setup (development)
+## Setup
 
 ### Requirements
 
@@ -75,7 +75,7 @@ Optionally, also unzip `data/sampled.zip`, `data/labeled.zip`, and `data/logs/ra
 
 Here is an example of one-shot fine-tuning using the OSS project's CI job data included in this package. The `seed` arguments can be changed for another reproducible repeat.
 
-NOTE: We recommend 16GB or more of GPU and a Linux-based operating system for fast training (~5min for one-shot).
+NOTE: We recommend 16GB or more of GPU and a Linux-based operating system for fast training (~5min for one-shot training).
 
 ```sh
 python src/models/run.py --project veloren --shots 1 --seed 1
